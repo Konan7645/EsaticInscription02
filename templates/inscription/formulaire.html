@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}Inscription au concours ESATIC{% endblock %}
+
+{% block content %}
+<h1 class="mb-4 text-center">Formulaire d'inscription</h1>
+
+<div class="row">
+    <div class="col-md-10 offset-md-1">
+        <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+            {% csrf_token %}
+            
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 mb-0">Informations personnelles</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.nom.id_for_label }}" class="form-label">{{ form.nom.label }}</label>
+                            {{ form.nom }}
+                            {% if form.nom.errors %}
+                                <div class="text-danger">{{ form.nom.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.prenom.id_for_label }}" class="form-label">{{ form.prenom.label }}</label>
+                            {{ form.prenom }}
+                            {% if form.prenom.errors %}
+                                <div class="text-danger">{{ form.prenom.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.niveau_etude.id_for_label }}" class="form-label">{{ form.niveau_etude.label }}</label>
+                            {{ form.niveau_etude }}
+                            {% if form.niveau_etude.errors %}
+                                <div class="text-danger">{{ form.niveau_etude.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.etablissement_origine.id_for_label }}" class="form-label">{{ form.etablissement_origine.label }}</label>
+                            {{ form.etablissement_origine }}
+                            {% if form.etablissement_origine.errors %}
+                                <div class="text-danger">{{ form.etablissement_origine.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.concours_souhaite.id_for_label }}" class="form-label">{{ form.concours_souhaite.label }}</label>
+                        {{ form.concours_souhaite }}
+                        {% if form.concours_souhaite.errors %}
+                            <div class="text-danger">{{ form.concours_souhaite.errors }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 mb-0">Documents requis</h2>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="{{ form.extrait_naissance.id_for_label }}" class="form-label">{{ form.extrait_naissance.label }}</label>
+                        {{ form.extrait_naissance }}
+                        {% if form.extrait_naissance.errors %}
+                            <div class="text-danger">{{ form.extrait_naissance.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.certificat.id_for_label }}" class="form-label">{{ form.certificat.label }}</label>
+                        {{ form.certificat }}
+                        {% if form.certificat.errors %}
+                            <div class="text-danger">{{ form.certificat.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.lettre_motivation.id_for_label }}" class="form-label">{{ form.lettre_motivation.label }}</label>
+                        {{ form.lettre_motivation }}
+                        {% if form.lettre_motivation.errors %}
+                            <div class="text-danger">{{ form.lettre_motivation.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.diplome.id_for_label }}" class="form-label">{{ form.diplome.label }}</label>
+                        {{ form.diplome }}
+                        {% if form.diplome.errors %}
+                            <div class="text-danger">{{ form.diplome.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.photo.id_for_label }}" class="form-label">{{ form.photo.label }}</label>
+                        {{ form.photo }}
+                        {% if form.photo.errors %}
+                            <div class="text-danger">{{ form.photo.errors }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Valider mon inscription</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Script pour la validation du formulaire côté client
+(function() {
+    'use strict';
+    
+    var forms = document.querySelectorAll('.needs-validation');
+    
+    Array.prototype.slice.call(forms).forEach(function(form) {
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            form.classList.add('was-validated');
+        }, false);
+    });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fiche d'inscription ESATIC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .info-section {
+            margin-bottom: 20px;
+        }
+        .info-section h2 {
+            font-size: 18px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+        .info-row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .info-label {
+            font-weight: bold;
+            width: 200px;
+        }
+        .info-value {
+            flex: 1;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        .photo-box {
+            border: 1px dashed #aaa;
+            width: 120px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            margin: 20px auto;
+        }
+        .signature-section {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .signature-box {
+            border-top: 1px solid #000;
+            width: 200px;
+            padding-top: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">ÉCOLE SUPÉRIEURE AFRICAINE DES TIC (ESATIC)</div>
+        <div class="subtitle">FICHE D'INSCRIPTION AU CONCOURS D'ENTRÉE</div>
+        <div class="subtitle">Année académique {% now "Y" %}-{% now "Y"|add:"1" %}</div>
+    </div>
+
+    <div class="container">
+        <div class="info-section">
+            <h2>Informations personnelles</h2>
+            <div class="info-row">
+                <div class="info-label">N° d'inscription :</div>
+                <div class="info-value">ESA{{ inscription.pk|stringformat:"04d" }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Nom :</div>
+                <div class="info-value">{{ inscription.nom }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Prénom :</div>
+                <div class="info-value">{{ inscription.prenom }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Niveau d'études actuel :</div>
+                <div class="info-value">{{ inscription.niveau_etude }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Établissement d'origine :</div>
+                <div class="info-value">{{ inscription.etablissement_origine }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Concours souhaité :</div>
+                <div class="info-value">{{ inscription.get_concours_souhaite_display }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Date d'inscription :</div>
+                <div class="info-value">{{ inscription.date_inscription|date:"d/m/Y H:i" }}</div>
+            </div>
+        </div>
+
+        <div class="photo-box">
+            Photo d'identité
+        </div>
+
+        <div class="info-section">
+            <h2>Documents fournis</h2>
+            <ul>
+                <li>Extrait de naissance</li>
+                <li>Certificat de scolarité</li>
+                <li>Lettre de motivation</li>
+                <li>Diplôme</li>
+                <li>Photo d'identité</li>
+            </ul>
+        </div>
+
+        <div class="signature-section">
+            <div class="signature-box">
+                Signature du candidat
+            </div>
+            <div class="signature-box">
+                Signature de l'administration
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Cette fiche d'inscription doit être présentée le jour du concours avec une pièce d'identité valide.</p>
+        <p>ESATIC - Adresse: Abidjan, Côte d'Ivoire - Tel: +225 XX XX XX XX - Email: concours@esatic.edu.ci</p>
+    </div>
+</body>
+</html>

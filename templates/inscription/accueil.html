@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Accueil - Concours ESATIC{% endblock %}
+
+{% block content %}
+<div class="text-center mb-4">
+    <h1 class="display-4">Bienvenue sur la plateforme d'inscription au concours ESATIC</h1>
+    <p class="lead">Inscrivez-vous dès maintenant pour participer au concours d'entrée à l'École Supérieure Africaine des TIC</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h4 mb-0">Comment s'inscrire ?</h2>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li>Cliquez sur le bouton "S'inscrire maintenant"</li>
+                    <li>Remplissez le formulaire avec vos informations personnelles</li>
+                    <li>Téléchargez les documents demandés (au format PDF)</li>
+                    <li>Validez votre inscription</li>
+                    <li>Imprimez votre fiche d'inscription</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h4 mb-0">Documents requis</h2>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>Extrait de naissance (PDF)</li>
+                    <li>Certificat de scolarité (PDF)</li>
+                    <li>Lettre de motivation (PDF)</li>
+                    <li>Diplôme (PDF)</li>
+                    <li>Photo d'identité (JPG ou PNG)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'nouvelle-inscription' %}" class="btn btn-primary btn-lg">S'inscrire maintenant</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

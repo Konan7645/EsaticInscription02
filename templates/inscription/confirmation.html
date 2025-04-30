@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmation d'inscription{% endblock %}
+
+{% block content %}
+<div class="text-center mb-4">
+    <h1 class="display-4">Félicitations !</h1>
+    <p class="lead">Votre inscription au concours ESATIC a été enregistrée avec succès.</p>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white">
+        <h2 class="h4 mb-0">Récapitulatif de votre inscription</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Nom :</strong> {{ inscription.nom }}</p>
+                <p><strong>Prénom :</strong> {{ inscription.prenom }}</p>
+                <p><strong>Niveau d'études actuel :</strong> {{ inscription.niveau_etude }}</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Établissement d'origine :</strong> {{ inscription.etablissement_origine }}</p>
+                <p><strong>Concours souhaité :</strong> {{ inscription.get_concours_souhaite_display }}</p>
+                <p><strong>Date d'inscription :</strong> {{ inscription.date_inscription|date:"d/m/Y H:i" }}</p>
+            </div>
+        </div>
+        
+        <div class="mt-3">
+            <h3>Documents fournis :</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Extrait de naissance :</strong> Fourni</li>
+                <li class="list-group-item"><strong>Certificat de scolarité :</strong> Fourni</li>
+                <li class="list-group-item"><strong>Lettre de motivation :</strong> Fournie</li>
+                <li class="list-group-item"><strong>Diplôme :</strong> Fourni</li>
+                <li class="list-group-item"><strong>Photo d'identité :</strong> Fournie</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <p>Veuillez imprimer votre fiche d'inscription pour la présenter le jour du concours.</p>
+    <a href="{% url 'generer-pdf' inscription.pk %}" class="btn btn-primary btn-lg">
+        <i class="bi bi-file-earmark-pdf"></i> Télécharger ma fiche d'inscription
+    </a>
+</div>
+
+<div class="text-center mt-5">
+    <p>Pour toute question, veuillez contacter le service des concours ESATIC :</p>
+    <p><strong>Email :</strong> concours@esatic.edu.ci</p>
+    <p><strong>Téléphone :</strong> +225 XX XX XX XX</p>
+</div>
+{% endblock %}
