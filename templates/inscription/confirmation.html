@@ -3,8 +3,16 @@
 {% block title %}Confirmation d'inscription{% endblock %}
 
 {% block content %}
+<!-- <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'accueil' %}"><img class="image" src="../../static/img/logo_esatic.jpg" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>  
+</nav>       -->
 <div class="text-center mb-4">
-    <h1 class="display-4">Félicitations !</h1>
+    <h2 class="display-4">Félicitations 👏👏👏 !!!</h2>
     <p class="lead">Votre inscription au concours ESATIC a été enregistrée avec succès.</p>
 </div>
 
@@ -17,7 +25,7 @@
             <div class="col-md-6">
                 <p><strong>Nom :</strong> {{ inscription.nom }}</p>
                 <p><strong>Prénom :</strong> {{ inscription.prenom }}</p>
-                <p><strong>Niveau d'études actuel :</strong> {{ inscription.niveau_etude }}</p>
+                <p><strong>Niveau d'étude :</strong> {{ inscription.niveau_etude }}</p>
             </div>
             <div class="col-md-6">
                 <p><strong>Établissement d'origine :</strong> {{ inscription.etablissement_origine }}</p>
@@ -49,6 +57,41 @@
 <div class="text-center mt-5">
     <p>Pour toute question, veuillez contacter le service des concours ESATIC :</p>
     <p><strong>Email :</strong> concours@esatic.edu.ci</p>
-    <p><strong>Téléphone :</strong> +225 XX XX XX XX</p>
+    <p><strong>Téléphone :</strong> +225 01 60 40 93 50</p>
 </div>
+
+<style>
+    body {
+        background-color: #4088d4; /* Couleur de fond vert clair */
+    }
+    
+    .logo-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .btn-primary {
+        background-color: #1e45f3 !important; /* Bouton bleu */
+        border-color: transparent !important;
+        color: #f6fafa !important; /* Texte blanc pour une meilleure lisibilité */
+    }
+    
+    .btn-primary:hover {
+        background-color: #0df02b !important; /* Vert vif au survol */
+        border-color: white !important;
+    }
+    
+    .card-header.bg-primary {
+        background-color: #03b35b !important; /* En-têtes des cartes en vert */
+        color: white;
+    }
+    .lead {
+        font-size: none;
+        background-color: #9cc7b1; /* Texte blanc pour une meilleure lisibilité */
+        border-radius: 10px;
+        display: inline-block;
+        padding: 2px 6px;
+    }
+</style>
 {% endblock %}

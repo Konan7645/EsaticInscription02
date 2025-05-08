@@ -3,8 +3,36 @@
 {% block title %}Accueil - Concours ESATIC{% endblock %}
 
 {% block content %}
+<style>
+    body {
+        background-color: #237ad8; /* Fond bleu ciel */
+    }
+    
+    .navbar {
+        background-color: #003366 !important; /* Barre de navigation bleu foncé */
+        padding-top: 15px !important; /* Augmentation de la taille de la nav */
+        padding-bottom: 15px !important;
+    }
+    
+    .btn-primary {
+        background-color: #1e45f3 !important; /* Bouton vert ciel (aquamarine) */
+        border-color: none !important;
+        color: #f6fafa !important; /* Texte noir pour une meilleure lisibilité */
+    }
+    
+    .btn-primary:hover {
+        background-color: #0df02b !important;
+        border-color: white !important;
+    }
+    
+    .card-header.bg-primary {
+        background-color: #0f365a !important; /* En-têtes des cartes en bleu foncé */
+        color: white;
+    }
+</style>
+
 <div class="text-center mb-4">
-    <h1 class="display-4">Bienvenue sur la plateforme d'inscription au concours ESATIC</h1>
+    <h2 class="display-4">Bienvenue sur la plateforme d'inscription au concours ESATIC</h2>
     <p class="lead">Inscrivez-vous dès maintenant pour participer au concours d'entrée à l'École Supérieure Africaine des TIC</p>
 </div>
 
@@ -16,7 +44,7 @@
             </div>
             <div class="card-body">
                 <ol>
-                    <li>Cliquez sur le bouton "S'inscrire maintenant"</li>
+                    <li>Cliquez sur le bouton "S'inscrire"</li>
                     <li>Remplissez le formulaire avec vos informations personnelles</li>
                     <li>Téléchargez les documents demandés (au format PDF)</li>
                     <li>Validez votre inscription</li>
@@ -24,7 +52,7 @@
                 </ol>
             </div>
         </div>
-
+        
         <div class="card mb-4">
             <div class="card-header bg-primary text-white">
                 <h2 class="h4 mb-0">Documents requis</h2>
@@ -39,9 +67,9 @@
                 </ul>
             </div>
         </div>
-
+        
         <div class="text-center mt-4">
-            <a href="{% url 'nouvelle-inscription' %}" class="btn btn-primary btn-lg">S'inscrire maintenant</a>
+            <a href="{% url 'nouvelle-inscription' %}" class="btn btn-primary btn-lg"><strong>S'inscrire </strong></a>
         </div>
     </div>
 </div>
