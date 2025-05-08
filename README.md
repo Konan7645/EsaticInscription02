@@ -56,4 +56,4 @@ Application web Django permettant aux étudiants de s'inscrire au concours d'ent
 
 ## Auteur
 
-Votre Nom
+Votre Nom#django_projet
