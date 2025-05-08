@@ -1,4 +1,4 @@
-# Django #
+# === Django ===
 *.log
 *.pot
 *.pyc
@@ -6,14 +6,19 @@ __pycache__/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-media
 
-# Environnements virtuels #
+# Dossiers de médias ou de fichiers générés
+media/
+staticfiles/
+
+# Environnements virtuels
 env/
 venv/
 ENV/
+.venv/
+.ENV/
 
-# Distribution / packaging #
+# === Packaging / distribution Python ===
 .Python
 build/
 develop-eggs/
@@ -31,12 +36,17 @@ wheels/
 .installed.cfg
 *.egg
 
-# Fichiers de l'éditeur #
+# === IDEs / éditeurs ===
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# Fichiers système #
+# === Fichiers système ===
 .DS_Store
 Thumbs.db
+
+# === Fichiers secrets ou de config locale ===
+.env
+*.env
+settings_local.py
